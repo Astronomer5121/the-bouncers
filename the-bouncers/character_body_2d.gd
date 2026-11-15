@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 30.0
 const JUMP_VELOCITY = -400.0
+const FRICTION = 10
 
 
 func _physics_process(delta: float) -> void:
@@ -18,14 +19,28 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var directionX := Input.get_axis("move_left", "move_right")
 	if directionX:
-		velocity.x = directionX * SPEED
+		velocity.x = velocity.x + directionX * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+		if velocity.x < 0:
+			velocity.x = velocity.x + FRICTION
+		elif velocity.x > 0:
+			velocity.x = velocity.x - FRICTION
+	
+	velocity.x = clamp(velocity.x, -400, 400)
+	
 	var directionY := Input.get_axis("move_up", "move_down")
 	if directionY:
-		velocity.y = directionY * SPEED
+		velocity.y = velocity.y + directionY * SPEED
 	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
+		if velocity.y < 0:
+			velocity.y = velocity.y + FRICTION
+		elif velocity.y > 0:
+			velocity.y = velocity.y - FRICTION
+			
+	velocity.y = clamp(velocity.y, -400, 400)
+	
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
+	
 	move_and_slide()
