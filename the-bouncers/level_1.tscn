@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://douktfxvf8x5h" path="res://New Piskel-3.png (4).png" id="4_5rr72"]
 [ext_resource type="Script" uid="uid://drdicu6oig4bh" path="res://rigid_body_2d.gd" id="5_gyffv"]
 [ext_resource type="Texture2D" uid="uid://b6pj8resf8aya" path="res://New Piskel-1.png (10).png" id="6_1pe0h"]
+[ext_resource type="Texture2D" uid="uid://cpb6bfyup18wq" path="res://New Piskel-2.png (1).png" id="7_j7kpp"]
+[ext_resource type="Texture2D" uid="uid://dno8s5t405mth" path="res://New Piskel-3.png (5).png" id="8_bjebc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xadyu"]
 size = Vector2(56, 64)
@@ -33,7 +35,7 @@ bounce = 1.0
 [node name="Level1" type="Node2D" unique_id=1636660145]
 
 [node name="NewPiskel3_png(3)" type="Sprite2D" parent="." unique_id=476118858]
-position = Vector2(574, 321.00003)
+position = Vector2(581, 338.00003)
 scale = Vector2(81.857155, 40.000004)
 texture = ExtResource("1_5hph3")
 
@@ -51,9 +53,9 @@ texture = ExtResource("3_bjebc")
 tile_set = SubResource("TileSet_xadyu")
 
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=2104961178]
-position = Vector2(160, 0)
+position = Vector2(50, 20)
 rotation = 1.5707964
-scale = Vector2(1, 50)
+scale = Vector2(1, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=460303476]
 position = Vector2(-9.000002, -8)
@@ -124,20 +126,50 @@ position = Vector2(0, -0.33333337)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_1pe0h")
 
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=495740589]
+position = Vector2(800, 300)
+physics_material_override = SubResource("PhysicsMaterial_xadyu")
+gravity_scale = 0.0
+script = ExtResource("5_gyffv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=624106940]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_xadyu")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2" unique_id=1012776469]
+position = Vector2(0, -0.33333337)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_j7kpp")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="." unique_id=752434835]
+position = Vector2(500, 200)
+physics_material_override = SubResource("PhysicsMaterial_xadyu")
+gravity_scale = 0.0
+script = ExtResource("5_gyffv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3" unique_id=1083285718]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_xadyu")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3" unique_id=1005564138]
+position = Vector2(0, -0.33333337)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_bjebc")
+
 [node name="Wall3" type="StaticBody2D" parent="." unique_id=2117449845]
-position = Vector2(160, 660)
+position = Vector2(150, 660)
 rotation = 1.5707964
-scale = Vector2(1, 50)
+scale = Vector2(1, 55)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=1667329851]
 position = Vector2(-9.000002, -8)
 shape = SubResource("RectangleShape2D_dxr5g")
 
 [node name="ColorRect" type="ColorRect" parent="Wall3" unique_id=457107567]
-offset_left = -19.000002
-offset_top = -18.0
-offset_right = 0.9999981
-offset_bottom = 2.0
+offset_left = -18.000061
+offset_top = -18.470007
+offset_right = 1.999939
+offset_bottom = 2.636364
 color = Color(0.49019608, 0.36862746, 0.19607843, 1)
 
 [node name="Wall6" type="StaticBody2D" parent="." unique_id=1946946365]
@@ -197,6 +229,36 @@ offset_right = 11.0
 offset_bottom = 10.0
 color = Color(0.49019608, 0.36862746, 0.19607843, 1)
 
+[node name="Wall13" type="StaticBody2D" parent="." unique_id=1473028182]
+position = Vector2(400, 250)
+rotation = 1.5707964
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall13" unique_id=875089231]
+shape = SubResource("RectangleShape2D_dxr5g")
+
+[node name="ColorRect" type="ColorRect" parent="Wall13" unique_id=1678123750]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+color = Color(0.49019608, 0.36862746, 0.19607843, 1)
+
+[node name="Wall14" type="StaticBody2D" parent="." unique_id=1663794227]
+position = Vector2(800, 450)
+rotation = 1.5707964
+scale = Vector2(1, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall14" unique_id=1826591469]
+shape = SubResource("RectangleShape2D_dxr5g")
+
+[node name="ColorRect" type="ColorRect" parent="Wall14" unique_id=1701625562]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+color = Color(0.49019608, 0.36862746, 0.19607843, 1)
+
 [node name="Wall12" type="StaticBody2D" parent="." unique_id=671469296]
 position = Vector2(600, 250)
 scale = Vector2(1, 5)
@@ -210,6 +272,52 @@ offset_top = -10.0
 offset_right = 11.0
 offset_bottom = 10.0
 color = Color(0.49019608, 0.36862746, 0.19607843, 1)
+
+[node name="Wall15" type="StaticBody2D" parent="." unique_id=527737319]
+position = Vector2(600, 450)
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall15" unique_id=1524619335]
+shape = SubResource("RectangleShape2D_dxr5g")
+
+[node name="ColorRect" type="ColorRect" parent="Wall15" unique_id=2003952177]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+color = Color(0.49019608, 0.36862746, 0.19607843, 1)
+
+[node name="Wall16" type="StaticBody2D" parent="." unique_id=1856462150]
+position = Vector2(850, 150)
+rotation = 0.7853982
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall16" unique_id=47810553]
+shape = SubResource("RectangleShape2D_dxr5g")
+
+[node name="ColorRect" type="ColorRect" parent="Wall16" unique_id=407397475]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+color = Color(0.49019608, 0.36862746, 0.19607843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Wall17" type="StaticBody2D" parent="." unique_id=2056382685]
+position = Vector2(850, 150)
+rotation = 2.3561945
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall17" unique_id=1848157603]
+shape = SubResource("RectangleShape2D_dxr5g")
+
+[node name="ColorRect" type="ColorRect" parent="Wall17" unique_id=483879131]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+color = Color(0.49019608, 0.36862746, 0.19607843, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Wall8" type="StaticBody2D" parent="." unique_id=922939172]
 position = Vector2(0, 300)
