@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bymh3h3jbu74m"]
+
+[ext_resource type="Texture2D" uid="uid://bd6mhtl1wywqv" path="res://New Piskel-3.png (3).png" id="1_ootpb"]
+[ext_resource type="Script" uid="uid://bmyborlgyu8ui" path="res://character_body_2d.gd" id="2_v38iq"]
+[ext_resource type="Texture2D" uid="uid://dyg2oelhjmf4q" path="res://New Piskel-1.png (9).png" id="3_v8kj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xadyu"]
+size = Vector2(56, 64)
+
+[node name="Level1" type="Node2D" unique_id=1636660145]
+
+[node name="NewPiskel3_png(3)" type="Sprite2D" parent="." unique_id=476118858]
+position = Vector2(578.00006, 326)
+scale = Vector2(81.857155, 40.000004)
+texture = ExtResource("1_ootpb")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1963029303]
+position = Vector2(40, 40)
+script = ExtResource("2_v38iq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=956937436]
+shape = SubResource("RectangleShape2D_xadyu")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=612028848]
+texture = ExtResource("3_v8kj3")
