@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b6pj8resf8aya" path="res://New Piskel-1.png (10).png" id="6_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://cpb6bfyup18wq" path="res://New Piskel-2.png (1).png" id="7_j7kpp"]
 [ext_resource type="Texture2D" uid="uid://dno8s5t405mth" path="res://New Piskel-3.png (5).png" id="8_bjebc"]
+[ext_resource type="Script" uid="uid://hib20b5nm4ql" path="res://area_2d.gd" id="9_5rr72"]
+[ext_resource type="Script" uid="uid://jary34cegla3" path="res://time.gd" id="10_gyffv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xadyu"]
 size = Vector2(56, 64)
@@ -32,11 +34,13 @@ bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xadyu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5xbs"]
+
 [node name="Level1" type="Node2D" unique_id=1636660145]
 
 [node name="NewPiskel3_png(3)" type="Sprite2D" parent="." unique_id=476118858]
-position = Vector2(581, 338.00003)
-scale = Vector2(81.857155, 40.000004)
+position = Vector2(581, 324.5)
+scale = Vector2(81.857155, 41.687504)
 texture = ExtResource("1_5hph3")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1963029303]
@@ -346,3 +350,17 @@ offset_top = -10.0
 offset_right = 11.0
 offset_bottom = 10.0
 color = Color(0.49019608, 0.36862746, 0.19607843, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1340916865]
+position = Vector2(1000, -1)
+scale = Vector2(200, 2)
+script = ExtResource("9_5rr72")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=840270948]
+shape = SubResource("RectangleShape2D_j5xbs")
+
+[node name="Time" type="Label" parent="." unique_id=1787816696]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "this is text"
+script = ExtResource("10_gyffv")
