@@ -3,7 +3,7 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	apply_central_impulse(Vector2(0, -50.0) * 10)
+	apply_central_impulse(Vector2(0, -50.0) * 5)
 	pass # Replace with function body.
 
 

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://by6ptxrjugkew"]
+
+[ext_resource type="Texture2D" uid="uid://douktfxvf8x5h" path="res://New Piskel-3.png (4).png" id="1_5nx2f"]
+
+[node name="Endgame" type="Node2D" unique_id=1010065716]
+
+[node name="NewPiskel3_png(4)" type="Sprite2D" parent="." unique_id=753075185]
+position = Vector2(576.00006, 329.00003)
+scale = Vector2(10.734376, 5.8281255)
+texture = ExtResource("1_5nx2f")
+
+[node name="Label" type="Label" parent="." unique_id=752862412]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 287.0
+offset_top = 219.0
+offset_right = 852.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 150
+text = "you win"

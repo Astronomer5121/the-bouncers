@@ -37,10 +37,8 @@ func _physics_process(delta: float) -> void:
 		elif velocity.y > 0:
 			velocity.y = velocity.y - FRICTION
 			
-	velocity.y = clamp(velocity.y, -400, 400)
+	velocity.y = clamp(velocity.y, -500, 500)
 	
-	var collision = move_and_collide(velocity * delta)
-	if false:
-		velocity = velocity.bounce(collision.get_normal())
+	#var collision = move_and_collide(velocity * delta)
 	
 	move_and_slide()
