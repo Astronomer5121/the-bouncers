@@ -9,6 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var collisionsarray = get_overlapping_areas()
-	if -10 > 0:
-		return
+	var collisionslength = collisionsarray.size()
+	if collisionslength >= 1:
+		Global.DoTimer = false
 	pass
